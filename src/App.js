@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { text } from '../src/stories/1-Button.stories';
+
 function App() {
   return (
     <div className="App">
