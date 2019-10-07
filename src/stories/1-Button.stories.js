@@ -15,3 +15,5 @@ export const emoji = () => (
     </span>
   </Button>
 );
+
+export const closeBtn = () => <Button onClick={action('clicked')}>X</Button>
