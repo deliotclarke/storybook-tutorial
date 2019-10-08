@@ -3,6 +3,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, object } from '@storybook/addon-knobs/react';
 
 import Task from './Task';
 
@@ -19,6 +20,7 @@ export const actions = {
 };
 
 storiesOf('Task', module)
-  .add('default', () => <Task task={task} {...actions} />)
+  .addDecorator(withKnobs)
+  .add('default', () => <Task task={object("task", { ...task })} {...actions} />)
   .add('pinned', () => <Task task={{ ...task, state: 'TASK_PINNED' }} {...actions} />)
   .add('archived', () => <Task task={{ ...task, state: 'TASK_ARCHIVED' }} {...actions} />);
