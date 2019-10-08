@@ -19,6 +19,6 @@ const store = {
 }
 
 storiesOf("InboxScreen", module)
-  .addDecorator(story => <Provider store={store} >{story()}</Provider>)
+  .addDecorator(story => <Provider store={store} >{story()}</Provider>) //! need to go further down the redux hole on this one.
   .add("default", () => <PureInboxScreen />)
   .add("error", () => <PureInboxScreen error="Something" />);
